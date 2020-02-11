@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <title>cisse_tp_javascript</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <script type="text/javascript">
+
+
+
+    var tab=[4,675,32,87,9837,364,7492,45,345,324,374,8364,5967,12,483,8573,659,365,9573,309];
+
+    function quiEstLeNombreLePlusGrand(a,b)
+         {
+        
+             return Math.max([a,b]);
+         }
+
+
+    function aleatoireNombre(max) 
+         {
+         return Math.floor(Math.random() * Math.floor(max));
+         }
+
+    function affectation(a,b)
+         {
+        tab[a]=b;
+         }
+
+    function jeu()
+
+         {
+        var premier;
+        var seconde;
+        var compteur;
+        var i;
+        var total=0;
+      
+        for (compteur=0;compteur<5;compteur+=1) 
+    {
+      nombre1 = aleatoireNombre(tab.length); //tab.length est la longueur du tableau tab
+      nombre2 = aleatoireNombre(tab.length);
+      if (nombre1 == nombre2) 
+      {
+        alert("perdu !");
+        break; //break permet de sortir de la boucle for
+      }
+      else 
+      {
+        quiEstLeNombreLePlusGrand(nombre1,nombre2); 
+        if (nombre1>nombre2) 
+        {
+          var nombre3=nombre1*(-1);
+          var nombre4=nombre2+50;
+          affectation(nombre3,nombre4);
+        }
+        else if (nombre2>nombre1) 
+        {
+          var nombre4=nombre2*(-1);
+          var nombre3=nombre1+50;
+          affectation(nombre4,nombre3);
+        }
+      }
+    }
+    for(i=0; i<=(tab.length);i+=1) 
+    {
+      somme += tab[i]; //parcourir le tableau
+    }
+    if(somme>=0) 
+    {
+      alert("gagné !");
+    }
+    else 
+    {
+    
+      alert("perdu !");
+    }
+
+    }
+         
+
+
+  </script>
+</head>
+<body>
+<p>Cliquez sur le bouton pour lancer le nombre&nbsp;: <button onclick="affiche()">quiEstLeNombreLePlusGrand</button></p>
+<p>Cliquez sur le bouton pour lancer le nombre&nbsp;: <button onclick="affiche2()">aleatoireNombre</button></p>
+<h1> JEU ALEATOIR DE NOMBRE </h1>
+</body>
+</html>
